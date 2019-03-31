@@ -1,0 +1,44 @@
+{
+  "name": "recoin",
+  "private": true,
+  "description": "reverse connecting inspector",
+  "license": "MIT",
+  "author": "Patrick Mueller <pmuellr@apache.org> (https://github.com/pmuellr)",
+  "homepage": "https://github.com/pmuellr/recoin",
+  "scripts": {
+    "build": "node tools/run-all.js npm run -s build",
+    "ncu": "node tools/run-all.js ncu -u --packageFile package.json",
+    "serve": "serve",
+    "standard": "standard --verbose && node tools/run-all npm run -s standard",
+    "test-pkgs": "node tools/run-all.js npm run -s test",
+    "test": "npm run -s standard && npm run -s test-pkgs",
+    "watch": "nodemon --exec 'npm run -s test'",
+    "postinstall": "node tools/run-all npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pmuellr/recoin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pmuellr/recoin/issues"
+  },
+  "standard": {
+    "ignore": [
+      "tmp/**/*",
+      "docs/**/*"
+    ]
+  },
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "dependency-check": "^3.3.0",
+    "express": "^4.16.4",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.9",
+    "serve": "^10.1.2",
+    "shelljs": "^0.8.3",
+    "standard": "^12.0.1",
+    "tiny-json-http": "^7.0.2",
+    "uuid": "^3.3.2"
+  },
+  "dependencies": {}
+}

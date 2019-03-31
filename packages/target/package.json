@@ -1,0 +1,48 @@
+{
+  "name": "@recoin/target",
+  "version": "1.0.0",
+  "description": "recoin - target runtime",
+  "license": "MIT",
+  "author": "Patrick Mueller <pmuellr@apache.org> (https://github.com/pmuellr)",
+  "homepage": "https://github.com/pmuellr/recoin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pmuellr/recoin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pmuellr/recoin/issues"
+  },
+  "main": "target.js",
+  "files": [
+    "target.js",
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "npm run -s test",
+    "deps-check": "node ../../tools/deps-check.js",
+    "standard": "standard --verbose",
+    "jest": "jest --colors",
+    "test": "npm -s run standard && npm run -s deps-check && npm run -s jest",
+    "watch": "nodemon --exec 'npm run -s test; date'"
+  },
+  "deps-check": {
+    "missing": {
+      "ignore": "inspector"
+    }
+  },
+  "standard": {
+    "ignore": [
+      "tmp/**"
+    ]
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "tmp/*"
+    ],
+    "delay": "1000"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "ws": "^6.2.1"
+  }
+}
